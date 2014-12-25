@@ -1,6 +1,6 @@
 module Starwars
   #
-  # A Film resource is an single film.
+  # A Vehicle resource is a single transport craft that does not have hyperdrive capability.
   #
   class Vehicle < Starwars::Base
     #

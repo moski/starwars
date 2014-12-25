@@ -1,6 +1,6 @@
 module Starwars
   #
-  # A Film resource is an single film.
+  # A Species resource is a type of person or character within the Star Wars Universe.
   #
   class Specie < Starwars::Base
     #

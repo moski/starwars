@@ -1,6 +1,6 @@
 module Starwars
   #
-  # A Film resource is an single film.
+  # A Starship resource is a single transport craft that has hyperdrive capability.
   #
   class Starship < Starwars::Base
     #
