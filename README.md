@@ -30,28 +30,35 @@ Or install it yourself as:
     $ gem install starwars
 
 ## Usage
-    require "starwars"
-    luke = Starwars::Person.fetch(1)
-    puts luke.name
-    puts luke.height
 
-    falcon = Starwars::Starship.new(id: 10)
-    falcon.fetch
-    puts falcon.name
-    puts falcon.pilots
+```ruby
+require "starwars"
+luke = Starwars::Person.fetch(1)
+p luke.name
+p luke.height
 
-  you can also nest the quries, such as:
-    
-    falcon.pilots.each do |piolt|
-      puts piolt.fetch.name
-    end
+falcon = Starwars::Starship.new(id: 10)
+falcon.fetch
+puts falcon.name
+puts falcon.pilots
+```
+  
+you can also nest the quries, such as:
 
-  You can load a resouce by url:
+```ruby    
+falcon.pilots.each do |pilot|
+  puts pilot.fetch.name
+end
+```
 
-    aldeeran = Starwars::Planet.new(url: 'http://swapi.co/api/planets/3/').fetch
-    puts aldeeran.name
-    puts aldeeran.residents
-    puts aldeeran.population
+You can load a resouce by url:
+
+```ruby    
+aldeeran = Starwars::Planet.new(url: 'http://swapi.co/api/planets/3/').fetch
+puts aldeeran.name
+puts aldeeran.residents
+puts aldeeran.population
+```
 
 ## Contributing
 
