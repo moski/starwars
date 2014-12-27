@@ -1,6 +1,7 @@
 require 'starwars/version'
 require 'starwars/base'
 require 'starwars/fetcher'
+require 'starwars/cursor'
 
 # Avoid circuler require issues :(
 module Starwars
@@ -11,9 +12,9 @@ module Starwars
   class Vehicle < Starwars::Base; end
   class Starship < Starwars::Base; end
 end
-require 'starwars/planet'
-require 'starwars/person'
-require 'starwars/specie'
-require 'starwars/vehicle'
-require 'starwars/starship'
-require 'starwars/film'
+require 'starwars/resources/planet'
+require 'starwars/resources/person'
+require 'starwars/resources/specie'
+require 'starwars/resources/vehicle'
+require 'starwars/resources/starship'
+require 'starwars/resources/film'
