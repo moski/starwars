@@ -10,8 +10,11 @@ end
 require 'starwars'
 require 'rspec'
 require 'webmock/rspec'
+require 'codeclimate-test-reporter'
 
-WebMock.disable_net_connect!(allow: 'coveralls.io')
+CodeClimate::TestReporter.start
+
+WebMock.disable_net_connect!(allow: %w(codeclimate.com coveralls.io))
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

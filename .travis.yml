@@ -25,3 +25,6 @@ branches:
   only: master
 notifications:
   email: false
+addons:
+  code_climate:
+    repo_token: 1ff7b77777bb46ecea79d73bbf4e060b2ad55623fe9b00a388195cc40acae787

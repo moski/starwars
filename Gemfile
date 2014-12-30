@@ -11,6 +11,7 @@ group :test do
     gem 'guard-rspec', '~> 4.2'
   end
   gem 'webmock'
+  gem 'codeclimate-test-reporter', group: :test, require: nil
 end
 
 # Specify your gem's dependencies in flood.gemspec
