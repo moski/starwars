@@ -19,6 +19,7 @@ matrix:
     - rvm: jruby-20mode
     - rvm: jruby-21mode
     - rvm: rbx-2
+    - rvm: jruby-19mode
   fast_finish: true
 branches:
   only: master
