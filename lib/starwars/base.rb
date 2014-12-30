@@ -50,7 +50,7 @@ module Starwars
       # @api public
       def fetch_all
         klass_name =  Object.const_get(name).const_get('RESOURCE_NAME')
-        object = Object.const_get("Starwars::#{klass_name.capitalize}").new(url: "#{Starwars::Base::BASE_URL}/#{klass_name}/")
+        object = Starwars.const_get("#{klass_name.capitalize}").new(url: "#{Starwars::Base::BASE_URL}/#{klass_name}/")
         Starwars::Request.new(resource: object, uri: object.url, params: {}).perform_request
       end
 
