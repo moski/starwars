@@ -30,39 +30,57 @@ Or install it yourself as:
 
     $ gem install starwars
 
-## Usage
+
+## Available Resources
 
 ```ruby
-require "starwars"
-luke = Starwars::Person.fetch(1)
-p luke.name
-p luke.height
-
-falcon = Starwars::Starship.new(id: 10)
-falcon.fetch
-puts falcon.name
-puts falcon.pilots
-```
-  
-you can also nest the quries, such as:
-
-```ruby    
-falcon.pilots.each do |pilot|
-  puts pilot.fetch.name
-end
+Starwars::Person
+Starwars::Film
+Starwars::Planet
+Starwars::Specie
+Starwars::Starship
+Starwars::Vehicle
 ```
 
-You can load a resouce by url:
+## Usage
 
-```ruby    
-aldeeran = Starwars::Planet.new(url: 'http://swapi.co/api/planets/3/').fetch
-puts aldeeran.name
-puts aldeeran.residents
-puts aldeeran.population
+All the resources defined above have 2 functions, `#fetch` and `#fetch_all` 
+
+## #Fetch
+
+`#fetch` is used to fetch a single resource via ID or Resource URL
+
+```ruby
+Starwars::Person.fetch(1).name
+Starwars::Person.fetch('http://swapi.co/api/people/3/').name
 ```
 
-<<<<<<< Local Changes
-<<<<<<< Local Changes
+## #fetch_all
+
+`#fetch_all` is used to fetch all resources via pagination 
+
+```ruby
+planets = Starwars::Planet.fetch_all
+
+# to access the items use #items
+planets.items.map(&:name)
+planets.items.each{|item| p item.inspect}
+
+# you can also use #results instead of iteams
+planets.results.map(&:name)
+```
+
+## Pagination
+
+using `#fetch_all` will yield a pagination response:
+
+```ruby
+starships = Starwars::Starship.fetch_all
+p starships.number_of_pages
+p starships.last_page?
+p starships.next_page?
+```
+
 To iterate pages you can use the following interface:
 
 ```ruby
@@ -72,11 +90,6 @@ Starwars::Starship.fetch_all.each{|page|
   p page.results.size
 }
 ```
-
-=======
->>>>>>> External Changes
-=======
->>>>>>> External Changes
 ## Contributing
 
 1. Fork it ( https://github.com/moski/starwars/fork )
