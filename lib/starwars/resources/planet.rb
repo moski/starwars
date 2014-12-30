@@ -9,28 +9,15 @@ module Starwars
     #
     RESOURCE_NAME = 'planets'
 
-    include Starwars::Fetcher
-
-    # @return [String]
     property :name
     property :climate
     property :gravity
     property :terrain
-    property :url
-
-    # @return [Integer]
-    property :id, type: Integer
     property :population, type: Integer
     property :rotation_period, type: Integer
     property :orbital_period, type: Integer
     property :surface_water, type: Integer
     property :diameter, type: Integer
-
-    # @return [Time]
-    property :created, type: Time
-    property :edited, type: Time
-
-    # @return [Array]
     collection :residents, class: Starwars::Person,  deserialize: ->(_, fragment, _) { Person.new(url: fragment) }
     collection :films, class: Starwars::Film,  deserialize: ->(_, fragment, _) { Film.new(url: fragment) }
   end

@@ -19,7 +19,7 @@ describe Starwars::Person do
   end
 
   describe 'getters' do
-    subject(:person_2) { Starwars::Person.fetch(2) }
+    subject(:person_2) { Starwars::Person.new(id: 2).fetch }
     subject(:person_1) { Starwars::Person.fetch(1) }
     describe '#created' do
       it 'returns a Time when updated is set' do

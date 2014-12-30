@@ -1,6 +1,6 @@
 require 'starwars/version'
 require 'starwars/base'
-require 'starwars/fetcher'
+require 'starwars/request'
 require 'starwars/cursor'
 
 # Avoid circuler require issues :(
@@ -18,3 +18,11 @@ require 'starwars/resources/specie'
 require 'starwars/resources/vehicle'
 require 'starwars/resources/starship'
 require 'starwars/resources/film'
+
+# Resources with pagination
+require 'starwars/resources/paginated/planets'
+require 'starwars/resources/paginated/films'
+require 'starwars/resources/paginated/people'
+require 'starwars/resources/paginated/species'
+require 'starwars/resources/paginated/starships'
+require 'starwars/resources/paginated/vehicles'

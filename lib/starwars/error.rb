@@ -2,7 +2,11 @@ module Starwars
   # Custom error class for rescuing from all Starwars errors
   class Error < StandardError
     class << self
+      # Return a hash of error classes
       # @return [Hash]
+      # @example get the total number of pages
+      #   Starwars::Error.errors
+      # @api public
       def errors
         @errors ||=  {
           400 => Starwars::Error::BadRequest,
@@ -20,6 +24,9 @@ module Starwars
     # @param message [Exception, String]
     # @param _status [Exception, status]
     # @return [Starwars::Error]
+    # @example
+    #   Starwars::Error.new('I am your father', nil)
+    # @api public
     def initialize(message = '', _status = nil)
       super(message)
     end
