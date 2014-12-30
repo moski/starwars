@@ -1,7 +1,7 @@
 require 'roar/json'
 require 'roar/client'
 require 'roar/coercion'
-require 'ostruct'
+require 'starwars/overrides/ostruct'
 require 'virtus'
 
 module Starwars

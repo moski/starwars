@@ -37,7 +37,7 @@ module Starwars
     #   Starwars::Starship.fetch_all.number_of_pages
     # @api public
     def number_of_pages
-      self['count']
+      self[:count]
     end
 
     # A wrapper to get the results within a page
@@ -48,7 +48,7 @@ module Starwars
     #   Starwars::Planet.fetch_all.items
     # @api public
     def results
-      self['results']
+      self[:results]
     end
 
     # Checks wheather this is the last page
