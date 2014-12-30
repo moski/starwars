@@ -2,6 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/moski/starwars/badge.png?branch=master)](https://coveralls.io/r/moski/starwars?branch=master)
 [![Build Status](https://travis-ci.org/moski/starwars.svg?branch=master)](https://travis-ci.org/moski/starwars)
+[![Inline docs](http://inch-ci.org/github/moski/starwars.svg?branch=master&style=flat)](http://inch-ci.org/github/moski/starwars)
 
 A Ruby interface for http://swapi.co/ - the Star Wars API
 ![Starwars](https://s3.amazonaws.com/f.cl.ly/items/1r2F2K460v1R2o011n1M/star-wars-evolution-evolution-funny.jpg)
@@ -29,55 +30,39 @@ Or install it yourself as:
 
     $ gem install starwars
 
-
-## Available Resources
-
-```ruby
-Starwars::Person
-Starwars::Film
-Starwars::Planet
-Starwars::Specie
-Starwars::Starship
-Starwars::Vehicle
-```
-
 ## Usage
 
-All the resources defined above have 2 functions, `#fetch` and `#fetch_all` 
-
-## #Fetch
-
-`#fetch` is used to fetch a single resource via ID or Resource URL
-
 ```ruby
-Starwars::Person.fetch(1).name
-Starwars::Person.fetch('http://swapi.co/api/people/3/').name
+require "starwars"
+luke = Starwars::Person.fetch(1)
+p luke.name
+p luke.height
+
+falcon = Starwars::Starship.new(id: 10)
+falcon.fetch
+puts falcon.name
+puts falcon.pilots
+```
+  
+you can also nest the quries, such as:
+
+```ruby    
+falcon.pilots.each do |pilot|
+  puts pilot.fetch.name
+end
 ```
 
-## #fetch_all
+You can load a resouce by url:
 
-`#fetch_all` is used to fetch all resources via pagination 
-
-```ruby
-planets = Starwars::Planet.fetch_all
-# to access the items use #items
-planets.items.map(&:name)
-planets.items.each{|item| p item.inspect}
-# you can also use #results instead of iteams
-planets.results.map(&:name)
+```ruby    
+aldeeran = Starwars::Planet.new(url: 'http://swapi.co/api/planets/3/').fetch
+puts aldeeran.name
+puts aldeeran.residents
+puts aldeeran.population
 ```
 
-## Pagination
-
-using `#fetch_all` will yield a pagination response:
-
-```ruby
-starships = Starwars::Starship.fetch_all
-p starships.number_of_pages
-p starships.last_page?
-p starships.next_page?
-```
-
+<<<<<<< Local Changes
+<<<<<<< Local Changes
 To iterate pages you can use the following interface:
 
 ```ruby
@@ -87,6 +72,11 @@ Starwars::Starship.fetch_all.each{|page|
   p page.results.size
 }
 ```
+
+=======
+>>>>>>> External Changes
+=======
+>>>>>>> External Changes
 ## Contributing
 
 1. Fork it ( https://github.com/moski/starwars/fork )
