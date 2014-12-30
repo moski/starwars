@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/moski/starwars/badge.png?branch=master)](https://coveralls.io/r/moski/starwars?branch=master)
 [![Build Status](https://travis-ci.org/moski/starwars.svg?branch=master)](https://travis-ci.org/moski/starwars)
 [![Inline docs](http://inch-ci.org/github/moski/starwars.svg?branch=master&style=flat)](http://inch-ci.org/github/moski/starwars)
+[![Code Climate](https://codeclimate.com/github/moski/starwars/badges/gpa.svg)](https://codeclimate.com/github/moski/starwars)
 
 A Ruby interface for http://swapi.co/ - the Star Wars API
 ![Starwars](https://s3.amazonaws.com/f.cl.ly/items/1r2F2K460v1R2o011n1M/star-wars-evolution-evolution-funny.jpg)
