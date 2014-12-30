@@ -33,14 +33,12 @@ Or install it yourself as:
 
 ## Available Resources
 
-```ruby
-Starwars::Person
-Starwars::Film
-Starwars::Planet
-Starwars::Specie
-Starwars::Starship
-Starwars::Vehicle
-```
+* `Starwars::Person` ([see docs](https://github.com/moski/starwars/blob/master/lib/starwars/resources/person.rb))
+* `Starwars::Film` ([see docs](https://github.com/moski/starwars/blob/master/lib/starwars/resources/film.rb))
+* `Starwars::Planet` ([see docs](https://github.com/moski/starwars/blob/master/lib/starwars/resources/planet.rb))
+* `Starwars::Specie` ([see docs](https://github.com/moski/starwars/blob/master/lib/starwars/resources/specie.rb))
+* `Starwars::Starship` ([see docs](https://github.com/moski/starwars/blob/master/lib/starwars/resources/starship.rb))
+* `Starwars::Vehicle` ([see docs](https://github.com/moski/starwars/blob/master/lib/starwars/resources/vehicle.rb))
 
 ## Usage
 
@@ -90,6 +88,12 @@ Starwars::Starship.fetch_all.each{|page|
   p page.results.size
 }
 ```
+
+## Documentation
+
+the gem is fairly documented. Browse the YARD [documentaion](http://rubydoc.info/gems/starwars/) for more information.
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/moski/starwars/fork )
